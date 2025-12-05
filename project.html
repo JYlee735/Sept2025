@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>School of Computing</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+header { background: #1e3a8a; color: white; padding: 20px; text-align: center; }
+nav { background: #0f172a; display: flex; justify-content: center; gap: 20px; padding: 10px; }
+nav a { color: white; text-decoration: none; font-weight: bold; cursor: pointer; }
+.container { max-width: 900px; margin: auto; background: white; padding: 20px; margin-top: 20px; border-radius: 10px; }
+
+
+/* ========================= Mobile (≤ 360px) ========================= */
+@media (max-width: 360px) {
+body { font-size: 12px; }
+nav { flex-direction: column; align-items: center; }
+nav a { width: 100%; text-align: center; }
+}
+
+
+/* ========================= Tablet (361px – 768px) ========================= */
+@media (max-width: 768px) {
+body { font-size: 14px; }
+nav { flex-direction: row; }
+}
+
+
+/* ========================= Desktop (≥ 769px) ========================= */
+@media (min-width: 769px) {
+body { font-size: 16px; max-width: 1500px; margin: auto; }
+.content { text-align: left; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>School of Computing</h1>
+<p>Welcome to our School of Computing</p>
+</header>
+
+
+<nav>
+<a href="#" onclick="loadPage('home.html'); return false;">Homepage</a>
+<a href="#" onclick="loadPage('about.html'); return false;">About Us</a>
+<a href="#" onclick="loadPage('programmes.html'); return false;">Programmes</a>
+<a href="#" onclick="loadPage('projects.html'); return false;">Student Projects</a>
+<a href="#" onclick="loadPage('contact.html'); return false;">Contact Information</a>
+<a href="#" onclick="loadPage('admission.html'); return false;">Admission & Application</a>
+</nav>
+
+
+<div class="container" style="padding:0;">
+<iframe id="contentFrame" src="home.html" style="width:100%; height:600px; border:none; background:white; border-radius:10px;"></iframe>
+</div>
+
+
+<script>
+function loadPage(page) {
+document.getElementById('contentFrame').src = page;
+}
+</script>
+</body>
+</html>
